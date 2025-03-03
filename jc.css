@@ -1,102 +1,95 @@
-﻿/* jc.css */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* 在现有媒体查询中补充以下修改 */
+@media (max-width: 768px) {
+    /* 新增：移动端标题优化 */
+    .page-title {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+        padding: 0 1rem;
+    }
+
+    /* 调整容器边距 */
+    .container {
+        padding: 1rem 0.5rem;
+    }
+
+    /* 优化搜索栏布局 */
+    .search-bar {
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    #searchInput {
+        padding: 0.8rem 5rem 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* 调整按钮位置 */
+    .clear-btn {
+        right: 4.5rem;
+        font-size: 1.2rem;
+    }
+
+    .search-btn {
+        padding: 0.6rem 1.2rem;
+        right: 0.5rem;
+    }
+
+    /* 优化内容框高度 */
+    .content-frame {
+        height: 65vh;
+        min-height: 300px;
+        padding: 1rem;
+    }
+
+    /* 调整项目布局 */
+    .item {
+        grid-template-columns: 80px 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .item img {
+        max-width: 150px;
+    }
+
+    /* 分页按钮优化 */
+    .pagination {
+        gap: 0.3rem;
+        padding: 0.5rem 0;
+    }
+
+    .pagination button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .pagination input {
+        width: 50px;
+        padding: 0.4rem;
+    }
 }
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f5f6fa;
-    transition: background 0.3s, color 0.3s;
-}
+/* 新增超小屏幕适配 (小于480px) */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.5em;
+    }
 
-/* 新增标题样式 */
-.page-title {
-    text-align: center;
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
+    .item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-/* 夜间模式 */
-.night-mode {
-    background: #2d3436;
-    color: #dfe6e9;
-}
+    .item img {
+        max-width: 120px;
+        margin-bottom: 0.5rem;
+    }
 
-.night-mode .page-title {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(255,255,255,0.2);
-}
+    #searchInput {
+        padding-right: 4.5rem;
+    }
 
-.night-mode .content-frame {
-    background: rgba(47, 53, 66, 0.95);
-    border-color: #3d3d3d;
+    .clear-btn {
+        right: 4rem;
+    }
 }
-
-.night-mode .item {
-    background: rgba(34, 40, 49, 0.9);
-}
-
-.night-mode .item p {
-    color: #b2bec3;
-}
-
-.container {
-    width: 95%;
-    max-width: 1200px;
-    padding: 2rem 1rem;
-}
-
-.search-bar {
-    position: relative;
-    margin: 0 auto 2rem;
-    width: 100%;
-    max-width: 800px;
-}
-
-#searchInput {
-    width: 100%;
-    padding: 1rem 7rem 1rem 1.5rem;
-    border: 2px solid #dfe6e9;
-    border-radius: 2rem;
-    font-size: 1rem;
-    transition: all 0.3s;
-}
-
-#searchInput:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
-}
-
-.clear-btn {
-    position: absolute;
-    right: 6.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: #95a5a6;
-    font-size: 1.5rem;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.search-btn {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0.8rem 2rem;
-    background: #3498db;
-    color: white;
-    border: none;
-    border-radius: 2rem

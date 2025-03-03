@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>道具查询系统</title>
+    <link rel="stylesheet" href="jc.css">
+    <link rel="icon" href="0.png" type="image/png"> <!-- 添加图标 -->
+</head>
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="输入ID/类别/名称进行搜索" oninput="filterItems()">
+            <button id="clearButton" class="clear-btn" onclick="clearSearch()">×</button>
+            <button id="searchButton" class="search-btn">搜索</button>
+        </div>
+        
+        <div class="content-frame" id="itemContainer"></div>
+        
+        <div class="pagination">
+            <button onclick="goToPage(1)">首页</button>
+            <button onclick="goToPage(currentPage - 1)">上页</button>
+            <span id="currentPage">1</span>/<span id="totalPages">1</span>
+            <input type="number" id="jumpPage" min="1" placeholder="页码">
+            <button onclick="jumpToPage()">跳转</button>
+            <button onclick="goToPage(currentPage + 1)">下页</button>
+            <button onclick="goToPage(totalPages)">尾页</button>
+        </div>
+
+        <div class="settings">
+            <button class="settings-button" onclick="toggleSettings()">⚙️</button>
+            <div class="settings-menu" id="settingsMenu">
+                <label for="fileInput" class="settings-button">📁</label>
+                <input type="file" id="fileInput" hidden accept=".txt" onchange="handleFileUpload(this.files)">
+                <button class="settings-button" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+    </div>
+    <script src="jc.js"></script>
+</body>
+</html>

@@ -64,7 +64,7 @@ body {
 
 .clear-btn {
     position: absolute;
-    right: 6.5rem;
+    right: 8rem;
     top: 50%;
     transform: translateY(-50%);
     background: none;
